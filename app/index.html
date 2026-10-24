@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920">
+  <title>XO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="menu" class="screen is-active">
+    <h1 class="logo">X<span>O</span></h1>
+    <div class="menu-items">
+      <div class="menu-item" data-mode="tv">Play vs TV</div>
+      <div class="menu-item" data-mode="duo">2 Players</div>
+    </div>
+    <p class="hint">Arrows to move &middot; OK to choose &middot; BACK to leave</p>
+  </section>
+
+  <section id="game" class="screen">
+    <aside class="side">
+      <h2 id="status" class="status"></h2>
+      <div class="scores">
+        <div class="score"><span id="label-x" class="score-label mark-x">X</span><span id="score-x" class="score-value">0</span></div>
+        <div class="score"><span id="label-o" class="score-label mark-o">O</span><span id="score-o" class="score-value">0</span></div>
+        <div class="score"><span class="score-label">Draws</span><span id="score-draw" class="score-value">0</span></div>
+      </div>
+      <p class="hint">Arrows to move &middot; OK to place<br>BACK for menu</p>
+    </aside>
+    <div id="board" class="board"></div>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+._*
+.DS_Store
+# Local project notes (home network details) stay private
+STATE.md
+DECISIONS.md
+HANDOFF.md

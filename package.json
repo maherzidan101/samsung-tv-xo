@@ -1,0 +1,10 @@
+{
+  "name": "samsung-tv-xo",
+  "version": "1.0.0",
+  "description": "A simple X-O (tic-tac-toe) game for Samsung TVs, played with the remote.",
+  "packageType": "app",
+  "appName": "XO",
+  "appPath": "app/index.html",
+  "keys": ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+  "license": "MIT"
+}

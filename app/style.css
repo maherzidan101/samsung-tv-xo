@@ -1,0 +1,86 @@
+/* Sized in vh so the layout holds on any TV resolution. */
+:root {
+  --bg: #0d1426;
+  --panel: #18233f;
+  --text: #eef2fb;
+  --muted: #8b97b5;
+  --x: #ff6b6b;
+  --o: #4dd4ff;
+  --focus: #ffd447;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at 30% 20%, #1c2a52 0%, var(--bg) 60%);
+  color: var(--text);
+  font-family: "SamsungOne", "Samsung Sans", Helvetica, Arial, sans-serif;
+}
+
+.screen { display: none; width: 100%; height: 100%; }
+.screen.is-active { display: flex; }
+
+/* Menu */
+#menu { flex-direction: column; align-items: center; justify-content: center; }
+.logo { font-size: 22vh; margin: 0 0 4vh; letter-spacing: 2vh; color: var(--x); line-height: 1; }
+.logo span { color: var(--o); }
+/* No flex `gap`: it needs Chrome 84 and the 2021 TV runs Chrome 76. */
+.menu-items { display: flex; }
+.menu-item + .menu-item { margin-left: 4vh; }
+.menu-item {
+  min-width: 36vh;
+  padding: 3vh 5vh;
+  border-radius: 2vh;
+  background: var(--panel);
+  font-size: 4.5vh;
+  text-align: center;
+  border: 0.6vh solid transparent;
+  cursor: pointer;
+}
+.menu-item.is-focused { border-color: var(--focus); transform: scale(1.06); }
+
+.hint { color: var(--muted); font-size: 2.8vh; margin-top: 5vh; line-height: 1.5; }
+
+/* Game */
+#game { align-items: center; justify-content: center; }
+.side { width: 60vh; margin-right: 10vh; }
+.status { font-size: 6vh; margin: 0 0 5vh; min-height: 16vh; line-height: 1.25; }
+.score + .score { margin-top: 2vh; }
+.score {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh 3vh;
+  border-radius: 1.5vh;
+  background: var(--panel);
+  font-size: 4vh;
+}
+.score-value { font-weight: bold; }
+.mark-x { color: var(--x); }
+.mark-o { color: var(--o); }
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 26vh);
+  grid-template-rows: repeat(3, 26vh);
+  gap: 2vh;
+}
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2vh;
+  background: var(--panel);
+  font-size: 18vh;
+  font-weight: bold;
+  border: 0.8vh solid transparent;
+  cursor: pointer;
+}
+.cell.is-focused { border-color: var(--focus); }
+.cell.is-x { color: var(--x); }
+.cell.is-o { color: var(--o); }
+.cell.is-win { background: #2e3f6e; }
+.board.is-over .cell:not(.is-win) { opacity: 0.45; }
